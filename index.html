@@ -52,26 +52,26 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden; /* Permit scroll pe verticală */
+            overflow-x: hidden;
         }
 
         /* Stiluri pentru titlu */
         h1 {
             margin: 0;
-            color: #87CEEB;
-            text-shadow: 0 0 10px rgba(135, 206, 235, 0.7); /* efect de glow */
+            color: #FF6347; /* Red */
+            text-shadow: 0 0 10px rgba(255, 99, 71, 0.7); /* red glow */
             font-size: 3em;
             font-weight: bold;
-            background: linear-gradient(135deg, #87CEEB, #87CEFA);
+            background: linear-gradient(135deg, #FF6347, #8B0000); /* red shades */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textGlow 1.5s ease-in-out infinite;
         }
 
         @keyframes textGlow {
-            0% { text-shadow: 0 0 5px rgba(135, 206, 235, 0.5); }
-            50% { text-shadow: 0 0 15px rgba(135, 206, 235, 1); }
-            100% { text-shadow: 0 0 5px rgba(135, 206, 235, 0.5); }
+            0% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 99, 71, 1); }
+            100% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
         }
 
         /* Container profil */
@@ -79,13 +79,13 @@
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Black */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.7);
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.7); /* red shadow */
             position: relative;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Asigură că containerul ocupă întreaga înălțime a paginii */
+            min-height: 100vh;
         }
 
         .profile-cover {
@@ -94,7 +94,7 @@
             background: url('https://xatimg.com/image/XG2Hl9bszqSn.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            border-bottom: 5px solid #87CEEB;
+            border-bottom: 5px solid #FF6347; /* Red */
         }
 
         .avatar-container {
@@ -106,8 +106,8 @@
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #ffffff;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            border: 5px solid #000000; /* Black */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* red shadow */
         }
 
         .avatar {
@@ -122,13 +122,13 @@
         }
 
         .profile-details h1 {
-            color: #87CEEB; /* Albastru deschis */
+            color: #FF6347; /* Red */
         }
 
         .profile-details p {
             margin: 10px 0;
             font-size: 1.1rem;
-            color: #333;
+            color: #D3D3D3; /* Light Gray */
             font-style: italic;
         }
 
@@ -142,7 +142,7 @@
             margin: 5px;
             text-decoration: none;
             color: #fff;
-            background-color: #87CEEB;
+            background-color: #FF6347; /* Red */
             border-radius: 5px;
             font-size: 1rem;
             font-weight: bold;
@@ -150,7 +150,7 @@
         }
 
         .profile-buttons a:hover {
-            background-color: #00BFFF;
+            background-color: #8B0000; /* Dark Red */
             transform: scale(1.05);
         }
 
@@ -158,43 +158,43 @@
         .info-cards {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; /* Permite cardurilor să treacă pe un nou rând dacă nu încap pe un singur rând */
+            flex-wrap: wrap;
             margin-top: 30px;
-            gap: 20px; /* Spațiu între carduri */
+            gap: 20px;
         }
 
         .info-card {
-            background-color: rgba(240, 244, 248, 0.9);
-            border: 1px solid #ddd;
+            background-color: rgba(0, 0, 0, 0.9); /* Black */
+            border: 1px solid #8B0000; /* Dark Red */
             border-radius: 8px;
             padding: 20px;
-            flex: 1 1 30%; /* Permite cardurilor să se redimensioneze și să se împartă uniform */
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.7);
+            flex: 1 1 30%;
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.7); /* red shadow */
             transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 20px; /* Spațiu între carduri */
-            min-width: 280px; /* Dimensiune minimă pentru carduri pentru a asigura că se încadrează bine pe ecrane mai mici */
+            margin-bottom: 20px;
+            min-width: 280px;
         }
 
         .info-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(0, 255, 255, 1);
+            box-shadow: 0 6px 12px rgba(255, 0, 0, 1); /* intense red shadow */
         }
 
         .info-card h3 {
             margin-top: 0;
-            color: #87CEEB;
+            color: #FF6347; /* Red */
             font-size: 1.5rem;
         }
 
         .info-card p {
             margin: 10px 0;
-            color: #555;
+            color: #D3D3D3; /* Light Gray */
         }
 
         .footer-text {
             text-align: center;
-            margin-top: auto; /* Asigură că textul de copyright este la baza paginii */
-            color: #87CEEB; /* Culoare albastră pentru text */
+            margin-top: auto;
+            color: #FF6347; /* Red */
             font-size: 1rem;
             font-weight: bold;
         }
@@ -215,7 +215,6 @@
             <p>ID: 1557730119</p>
             <p>Send me a private message for inquiries!</p>
             <div class="profile-buttons">
-              
                 <a href="indexgifs.html" target="_blank">Gif</a>
                 <a href="indexpcback.html" target="_blank">PcBack</a>
                 <a href="indexpstyle.html" target="_blank">PstyleGif</a>
@@ -232,7 +231,7 @@
             </div>
             <div class="info-card">
                 <h3>Contact</h3>
-                <p>For xat help or any inquiries and collaborations, please contact me in a private chat at ID: Seph (10241024). </p>
+                <p>For xat help or any inquiries and collaborations, please contact me in a private chat at ID: Seph (10241024).</p>
             </div>
         </div>
         <div class="footer-text">
