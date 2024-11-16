@@ -133,10 +133,14 @@
             name.classList.add('name');
             name.textContent = `Exclusiv ${imageName.replace(/\.(png|gif)$/, '')}`;
 
-            // Afișăm prețul imaginii
+            // Determinăm prețul în funcție de tipul fișierului
             const price = document.createElement('div');
             price.classList.add('price');
-            price.textContent = 'Price: 600 xats';
+            if (imageName.endsWith('.png')) {
+                price.textContent = 'Price: 600 xats'; // Preț pentru fișiere .png
+            } else if (imageName.endsWith('.gif')) {
+                price.textContent = 'Price: 1500 xats'; // Preț pentru fișiere .gif
+            }
 
             // Adăugăm imaginea, numele și prețul la galerie
             imgItem.appendChild(img);
