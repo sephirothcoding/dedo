@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie Imagini</title>
+    <title>Galerie Imagini PcBack</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -80,6 +80,14 @@
             text-shadow: 0 0 5px rgba(255, 99, 71, 0.7); /* Red Glow */
         }
 
+        .price {
+            margin-top: 10px;
+            color: #FF6347; /* Red */
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 0 0 5px rgba(255, 99, 71, 0.7); /* Red Glow */
+        }
+
         @keyframes textGlow {
             0% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
             50% { text-shadow: 0 0 15px rgba(255, 99, 71, 1); }
@@ -95,11 +103,11 @@
 <script>
     function loadImages() {
         const imageNames = [
-            'PcBack1.png',
-            'PcBack2.png',
-            'PcBack3.png',
-            'PcBack4.png',
-            'PcBack5.png'
+            'exclusivpcback1.png',
+            'exclusivpcback2.png',
+            'exclusivpcback3.png',
+            'exclusivpcback4.png',
+            'exclusivpcback5.png'
         ];
 
         const gallery = document.getElementById('pcback-gallery');
@@ -117,11 +125,17 @@
             // Afișăm numele imaginii
             const name = document.createElement('div');
             name.classList.add('name');
-            name.textContent = `PcBack ${index + 1}`;
+            name.textContent = `exclusivpcback ${index + 1}`;
 
-            // Adaugă imaginea și numele la galerie
+            // Afișăm prețul imaginii
+            const price = document.createElement('div');
+            price.classList.add('price');
+            price.textContent = 'Price: 600 xats';
+
+            // Adăugăm imaginea, numele și prețul la galerie
             imgItem.appendChild(img);
             imgItem.appendChild(name);
+            imgItem.appendChild(price);
             gallery.appendChild(imgItem);
         });
     }
