@@ -58,6 +58,7 @@
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: auto; /* Permite dimensiuni flexibile */
+            max-width: 728px; /* Setează lățimea maximă */
         }
 
         .gallery-item:hover {
@@ -66,6 +67,8 @@
         }
 
         .gallery-item img {
+            max-width: 100%; /* Ajustează imaginea să ocupe lățimea disponibilă */
+            height: auto; /* Păstrează proporțiile imaginii */
             border-radius: 10px;
             transition: opacity 0.5s ease;
         }
