@@ -95,18 +95,11 @@
 
 <script>
     function loadImages() {
-        // Numele fișierelor .png și .gif
         const imageNames = [
             'pcback1.png',
             'pcback2.png',
-            'pcback3.png',
-            'pcback4.png',
-            'pcback5.png',
             'pcbackgif1.gif',
-            'pcbackgif2.gif',
-            'pcbackgif3.gif',
-            'pcbackgif4.gif',
-            'pcbackgif5.gif'
+            'pcbackgif2.gif'
         ];
 
         const gallery = document.getElementById('pcback-gallery');
@@ -145,7 +138,7 @@
             };
 
             img.onerror = function() {
-                // Dacă fișierul nu există, nu-l adăugăm la galerie
+                // Dacă fișierul nu există, afișăm un mesaj în consolă
                 console.log(`File not found: ${imageName}`);
             };
         });
