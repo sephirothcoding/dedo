@@ -102,12 +102,18 @@
 
 <script>
     function loadImages() {
+        // Numele fișierelor .png și .gif
         const imageNames = [
             'exclusivpcback1.png',
             'exclusivpcback2.png',
             'exclusivpcback3.png',
             'exclusivpcback4.png',
-            'exclusivpcback5.png'
+            'exclusivpcback5.png',
+            'pcbackgif1.gif',
+            'pcbackgif2.gif',
+            'pcbackgif3.gif',
+            'pcbackgif4.gif',
+            'pcbackgif5.gif'
         ];
 
         const gallery = document.getElementById('pcback-gallery');
@@ -125,7 +131,7 @@
             // Afișăm numele imaginii
             const name = document.createElement('div');
             name.classList.add('name');
-            name.textContent = `exclusivpcback ${index + 1}`;
+            name.textContent = `Exclusiv ${imageName.replace(/\.(png|gif)$/, '')}`;
 
             // Afișăm prețul imaginii
             const price = document.createElement('div');
