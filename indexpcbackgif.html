@@ -57,7 +57,7 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 728px; /* Dimensiunea imaginii */
+            width: auto; /* Permite dimensiuni flexibile */
         }
 
         .gallery-item:hover {
@@ -66,8 +66,6 @@
         }
 
         .gallery-item img {
-            width: 728px;
-            height: 486px;
             border-radius: 10px;
             transition: opacity 0.5s ease;
         }
@@ -90,6 +88,13 @@
             font-weight: bold;
             font-size: 1.2em;
             text-shadow: 0 0 5px rgba(255, 99, 71, 0.7);
+        }
+
+        .dimensions {
+            margin-top: 10px;
+            color: #FF6347;
+            font-size: 1em;
+            font-style: italic;
         }
 
         @keyframes textGlow {
@@ -140,6 +145,12 @@
             price.classList.add('price');
             price.textContent = 'Price: 600 xats';
             imgItem.appendChild(price);
+
+            // Afișăm dimensiunile imaginii
+            const dimensions = document.createElement('div');
+            dimensions.classList.add('dimensions');
+            dimensions.textContent = `Dimensions: ${img.naturalWidth} x ${img.naturalHeight} px`;
+            imgItem.appendChild(dimensions);
 
             gallery.appendChild(imgItem);
 
