@@ -88,7 +88,7 @@
             max-width: 100%;
         }
 
-        .package .pcback {
+        .pcback {
             width: 100%;
             height: auto;
         }
@@ -151,7 +151,7 @@
         const packageDiv = document.createElement('div');
         packageDiv.classList.add('package');
 
-        // Adaugă imaginile
+        // Adaugă imaginile (gif și pstylegif pe aceeași linie)
         const imagesDiv = document.createElement('div');
         imagesDiv.classList.add('package-images');
 
@@ -173,12 +173,14 @@
             imagesDiv.appendChild(pstyleGifImg);
         }
 
+        // Adaugă PCBackGif sub celelalte imagini
+        const pcBackDiv = document.createElement('div');
         if (files.pcbackgif) {
             const pcBackImg = document.createElement('img');
             pcBackImg.src = files.pcbackgif;
             pcBackImg.alt = `PCBack Gif ${packageNumber}`;
             pcBackImg.classList.add('pcback');
-            imagesDiv.appendChild(pcBackImg);
+            pcBackDiv.appendChild(pcBackImg);
         }
 
         // Adaugă numele și prețul
@@ -192,6 +194,7 @@
 
         // Așează totul în pachet
         packageDiv.appendChild(imagesDiv);
+        packageDiv.appendChild(pcBackDiv);
         packageDiv.appendChild(nameDiv);
         packageDiv.appendChild(priceDiv);
 
