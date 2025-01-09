@@ -107,11 +107,24 @@
 <div id="packages-container"></div>
 
 <script>
-    const baseUrl = 'https://raw.githubusercontent.com/sephirothcoding/dedo/main/pachete/';
-    const files = [
-        'gif1.gif', 'pcbackgif1.gif', 'pstylegif1.gif',
-        'gif2.gif', 'pcbackgif2.gif', 'pstylegif2.gif'
-    ];
+    async function fetchPackageFiles() {
+        const repoOwner = 'sephirothcoding';  // Numele de utilizator GitHub
+        const repoName = 'dedo';              // Numele repository-ului
+        const packageFolder = 'pachete';      // Folderul cu fișierele din repository
+        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${packageFolder}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
+
+            // Filtrăm doar fișierele care au extensia .gif
+            return data.filter(item => item.name.endsWith('.gif')).map(file => file.name);
+        } catch (error) {
+            console.error('Failed to fetch files:', error);
+            return [];
+        }
+    }
 
     function groupFilesByPackage(files) {
         const packages = {};
@@ -124,7 +137,7 @@
                 if (!packages[number]) {
                     packages[number] = {};
                 }
-                packages[number][type] = baseUrl + file;
+                packages[number][type] = `https://raw.githubusercontent.com/sephirothcoding/dedo/main/pachete/${file}`;
             }
         });
 
@@ -185,8 +198,9 @@
         return packageDiv;
     }
 
-    function displayPackages() {
+    async function displayPackages() {
         const packagesContainer = document.getElementById('packages-container');
+        const files = await fetchPackageFiles();
         const groupedFiles = groupFilesByPackage(files);
 
         // Curăță containerul de pachete existente
