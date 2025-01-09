@@ -49,6 +49,7 @@
             margin-bottom: 40px;
             width: 350px;
             max-width: 100%;
+            box-sizing: border-box;
         }
 
         .package:hover {
@@ -59,6 +60,8 @@
         .package img {
             border-radius: 10px;
             object-fit: contain; /* Impiedică deformarea imaginii */
+            max-width: 100%; /* Se va adapta la lățimea containerului */
+            height: auto; /* Își va ajusta înălțimea proporțional cu lățimea */
         }
 
         .name {
@@ -87,7 +90,8 @@
         }
 
         .package-images img {
-            max-width: 100%;
+            max-width: 100%; 
+            height: auto;
         }
 
         .pcback {
