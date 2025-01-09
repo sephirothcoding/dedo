@@ -48,6 +48,7 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
         }
 
         .package:hover {
@@ -97,11 +98,30 @@
         }
     }
 
+    function groupFilesByPackage(files) {
+        const packages = {};
+
+        files.forEach(file => {
+            const match = file.name.match(/(gif|pcbackgif|pstylegif)(\d+)/);
+            if (match) {
+                const type = match[1];  // gif, pcbackgif, pstylegif
+                const number = match[2];  // Number of the package
+                if (!packages[number]) {
+                    packages[number] = {};
+                }
+                packages[number][type] = file.download_url;
+            }
+        });
+
+        return packages;
+    }
+
     async function loadPackages() {
         const files = await fetchFiles('pachete');
+        const packages = groupFilesByPackage(files);
         const packageContainer = document.getElementById('package-container');
 
-        if (!files.length) {
+        if (Object.keys(packages).length === 0) {
             const message = document.createElement('div');
             message.textContent = 'Nu există pachete disponibile.';
             message.style.color = '#FF6347';
@@ -111,26 +131,51 @@
             return;
         }
 
-        files.forEach((file, index) => {
+        Object.keys(packages).forEach((packageNumber) => {
+            const packageData = packages[packageNumber];
             const packageDiv = document.createElement('div');
             packageDiv.classList.add('package');
 
-            // Încarcă imaginea
-            const img = document.createElement('img');
-            img.src = file.download_url;
-            img.alt = file.name;
-
-            // Adaugă numele pachetului
+            // Adaugă titlul pachetului
             const nameDiv = document.createElement('div');
             nameDiv.classList.add('name');
-            nameDiv.textContent = `Pachet ${index + 1}`;
+            nameDiv.textContent = `Pachet ${packageNumber}`;
 
-            // Adaugă prețul
+            // Adaugă imaginea avatar
+            if (packageData.gif) {
+                const avatarImg = document.createElement('img');
+                avatarImg.src = packageData.gif;
+                avatarImg.alt = `gif${packageNumber}`;
+                avatarImg.width = 80;
+                avatarImg.height = 80;
+                packageDiv.appendChild(avatarImg);
+            }
+
+            // Adaugă imaginea pcbackgif
+            if (packageData.pcbackgif) {
+                const pcbackImg = document.createElement('img');
+                pcbackImg.src = packageData.pcbackgif;
+                pcbackImg.alt = `pcbackgif${packageNumber}`;
+                pcbackImg.width = 728;
+                pcbackImg.height = 486;
+                packageDiv.appendChild(pcbackImg);
+            }
+
+            // Adaugă imaginea pstylegif
+            if (packageData.pstylegif) {
+                const pstyleImg = document.createElement('img');
+                pstyleImg.src = packageData.pstylegif;
+                pstyleImg.alt = `pstylegif${packageNumber}`;
+                pstyleImg.width = 100;
+                pstyleImg.height = 300;
+                packageDiv.appendChild(pstyleImg);
+            }
+
+            // Adaugă prețul pachetului
             const priceDiv = document.createElement('div');
             priceDiv.classList.add('price');
-            priceDiv.textContent = `${3000 - index * 100} xats`;
+            priceDiv.textContent = `${3000 - packageNumber * 100} xats`;
 
-            packageDiv.appendChild(img);
             packageDiv.appendChild(nameDiv);
             packageDiv.appendChild(priceDiv);
             packageContainer.appendChild(packageDiv);
