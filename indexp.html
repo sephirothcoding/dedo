@@ -43,13 +43,20 @@
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
-            width: 80%;
+            width: 90%; /* Ajustează dimensiunea containerului */
             max-width: 600px;
         }
 
         .package img {
             margin: 10px 0;
             border-radius: 4px;
+            max-width: 100%; /* Scalare proporțională */
+            height: auto; /* Păstrează proporțiile */
+        }
+
+        .gif {
+            width: 100px;
+            height: 100px;
         }
 
         .pstyle {
@@ -58,8 +65,8 @@
         }
 
         .pcback {
-            width: 728px;
-            height: 486px;
+            max-width: 90%; /* Scalare proporțională pentru pcbackgif */
+            height: auto;
         }
 
         .name, .price {
@@ -133,8 +140,7 @@
                 const gifImage = document.createElement('img');
                 gifImage.src = packageFiles.gif;
                 gifImage.alt = `GIF ${number}`;
-                gifImage.width = 100;
-                gifImage.height = 100;
+                gifImage.classList.add('gif');
                 packageDiv.appendChild(gifImage);
             }
 
