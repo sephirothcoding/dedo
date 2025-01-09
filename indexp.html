@@ -58,7 +58,7 @@
 
         .package img {
             border-radius: 10px;
-            object-fit: contain; /* Împiedică deformarea imaginii */
+            object-fit: contain; /* Impiedică deformarea imaginii */
         }
 
         .name {
@@ -102,13 +102,19 @@
         }
 
         .pstylegif-img {
-            max-width: 300px;
-            max-height: 100px;
+            width: 300px; /* Dimensiune fixă pentru pstylegif */
+            height: 100px;
         }
 
         .pcback-img {
             max-width: 100%;
             max-height: 200px;
+        }
+
+        /* Responsivitate */
+        .package-images img {
+            max-width: 100%; 
+            height: auto;
         }
 
         @keyframes textGlow {
@@ -218,11 +224,11 @@
     }
 
     async function displayPackages() {
-        const packagesContainer = document.getElementById('packages-container');
         const files = await fetchPackageFiles();
         const groupedFiles = groupFilesByPackage(files);
+        const packagesContainer = document.getElementById('packages-container');
 
-        // Curăță containerul de pachete existente
+        // Golește containerul înainte de a adăuga pachetele
         packagesContainer.innerHTML = '';
 
         // Adaugă pachetele
