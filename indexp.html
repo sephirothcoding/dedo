@@ -54,19 +54,24 @@
             height: auto; /* Păstrează proporțiile */
         }
 
-        .gif {
+        .gif, .pstyle {
             width: 100px;
             height: 100px;
+            margin-right: 10px; /* Între ele va fi o mică distanță */
         }
 
-        .pstyle {
-            width: 300px;
-            height: 100px;
+        .package-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Distanța dintre imagini */
+            width: 100%;
+            margin-bottom: 10px;
         }
 
         .pcback {
             max-width: 90%; /* Scalare proporțională pentru pcbackgif */
             height: auto;
+            margin-top: 10px;
         }
 
         .name, .price {
@@ -136,12 +141,15 @@
             packageTitle.textContent = `Pachet ${number}`;
             packageDiv.appendChild(packageTitle);
 
+            const imageContainer = document.createElement('div');
+            imageContainer.classList.add('package-images');
+            
             if (packageFiles.gif) {
                 const gifImage = document.createElement('img');
                 gifImage.src = packageFiles.gif;
                 gifImage.alt = `GIF ${number}`;
                 gifImage.classList.add('gif');
-                packageDiv.appendChild(gifImage);
+                imageContainer.appendChild(gifImage);
             }
 
             if (packageFiles.pstylegif) {
@@ -149,8 +157,10 @@
                 pstyleImage.src = packageFiles.pstylegif;
                 pstyleImage.alt = `PStyle ${number}`;
                 pstyleImage.classList.add('pstyle');
-                packageDiv.appendChild(pstyleImage);
+                imageContainer.appendChild(pstyleImage);
             }
+
+            packageDiv.appendChild(imageContainer);
 
             if (packageFiles.pcbackgif) {
                 const pcbackImage = document.createElement('img');
