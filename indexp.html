@@ -52,6 +52,16 @@
             border-radius: 4px;
         }
 
+        .pstyle {
+            width: 300px;
+            height: 100px;
+        }
+
+        .pcback {
+            width: 728px;
+            height: 486px;
+        }
+
         .name, .price {
             margin: 5px 0;
             color: #FF6347;
@@ -80,8 +90,7 @@
         'gif1.gif',
         'pcbackgif1.gif',
         'pstylegif1.gif',
-        'gif2.gif',
-        'pcbackgif2.gif'
+        'gif2.gif'
         // Adaugă aici numele fișierelor existente
     ];
 
@@ -107,6 +116,11 @@
         const packageContainer = document.getElementById('package-container');
 
         for (const [number, packageFiles] of Object.entries(packages)) {
+            // Verificăm dacă pachetul are cel puțin un fișier
+            if (!packageFiles.gif && !packageFiles.pcbackgif && !packageFiles.pstylegif) {
+                continue; // Sărim peste pachetele goale
+            }
+
             const packageDiv = document.createElement('div');
             packageDiv.classList.add('package');
 
@@ -124,22 +138,20 @@
                 packageDiv.appendChild(gifImage);
             }
 
-            if (packageFiles.pcbackgif) {
-                const pcbackImage = document.createElement('img');
-                pcbackImage.src = packageFiles.pcbackgif;
-                pcbackImage.alt = `PCBack ${number}`;
-                pcbackImage.width = 728;
-                pcbackImage.height = 486;
-                packageDiv.appendChild(pcbackImage);
-            }
-
             if (packageFiles.pstylegif) {
                 const pstyleImage = document.createElement('img');
                 pstyleImage.src = packageFiles.pstylegif;
                 pstyleImage.alt = `PStyle ${number}`;
-                pstyleImage.width = 100;
-                pstyleImage.height = 300;
+                pstyleImage.classList.add('pstyle');
                 packageDiv.appendChild(pstyleImage);
+            }
+
+            if (packageFiles.pcbackgif) {
+                const pcbackImage = document.createElement('img');
+                pcbackImage.src = packageFiles.pcbackgif;
+                pcbackImage.alt = `PCBack ${number}`;
+                pcbackImage.classList.add('pcback');
+                packageDiv.appendChild(pcbackImage);
             }
 
             const priceDiv = document.createElement('div');
