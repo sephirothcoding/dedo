@@ -15,22 +15,23 @@
             margin: 0;
             min-height: 100vh;
             overflow-y: auto;
+            background-color: #1E2A47; /* Albastru închis */
         }
 
         h1 {
             margin-top: 20px;
-            color: #FF6347; /* Red */
-            text-shadow: 0 0 10px rgba(255, 99, 71, 0.7); /* Red Glow */
+            color: #1E90FF; /* Albastru luminos */
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Albastru luminos Glow */
             font-size: 3em;
             font-weight: bold;
-            background: linear-gradient(135deg, #FF6347, #8B0000); /* Red Shades */
+            background: linear-gradient(135deg, #1E90FF, #00008B); /* Albastru și albastru închis */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textGlow 1.5s ease-in-out infinite;
         }
 
         h2 {
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
             font-size: 2em;
             text-align: center;
             margin-top: 40px;
@@ -40,11 +41,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 2px solid #000000; /* Black */
+            border: 2px solid #00008B; /* Albastru închis */
             padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8); /* Black */
+            background-color: rgba(0, 0, 128, 0.8); /* Albastru semi-transparent */
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7); /* Red Glow */
+            box-shadow: 0 0 20px rgba(30, 144, 255, 0.7); /* Albastru luminos Glow */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 40px;
             width: 500px; /* Mărim lățimea containerului */
@@ -55,7 +56,7 @@
 
         .package:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 0, 0, 1); /* Stronger Red Glow */
+            box-shadow: 0 0 30px rgba(30, 144, 255, 1); /* Glow mai puternic */
         }
 
         .package img {
@@ -67,18 +68,18 @@
 
         .name {
             margin-top: 10px;
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
             font-weight: bold;
             font-size: 1.1em;
-            text-shadow: 0 0 5px rgba(255, 99, 71, 0.7); /* Red Glow */
+            text-shadow: 0 0 5px rgba(30, 144, 255, 0.7); /* Glow albastru luminos */
         }
 
         .price {
             margin-top: 10px;
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
             font-weight: bold;
             font-size: 1.2em;
-            text-shadow: 0 0 5px rgba(255, 99, 71, 0.7); /* Red Glow */
+            text-shadow: 0 0 5px rgba(30, 144, 255, 0.7); /* Glow albastru luminos */
         }
 
         .package-images {
@@ -125,9 +126,9 @@
         }
 
         @keyframes textGlow {
-            0% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
-            50% { text-shadow: 0 0 15px rgba(255, 99, 71, 1); }
-            100% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
+            0% { text-shadow: 0 0 5px rgba(30, 144, 255, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(30, 144, 255, 1); }
+            100% { text-shadow: 0 0 5px rgba(30, 144, 255, 0.5); }
         }
     </style>
 </head>
