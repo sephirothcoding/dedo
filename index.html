@@ -46,32 +46,32 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://xatimg.com/image/aGBLR1MOWcPH.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #33BBEB; /* Fundal albastru deschis */
             font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
+            color: #fff; /* Text alb */
         }
 
         /* Stiluri pentru titlu */
         h1 {
             margin: 0;
-            color: #FF6347; /* Red */
-            text-shadow: 0 0 10px rgba(255, 99, 71, 0.7); /* red glow */
+            color: #1E90FF; /* Albastru luminos */
+            text-shadow: 0 0 10px rgba(30, 144, 255, 0.7); /* Albastru luminos glow */
             font-size: 3em;
             font-weight: bold;
-            background: linear-gradient(135deg, #FF6347, #8B0000); /* red shades */
+            background: linear-gradient(135deg, #1E90FF, #00008B); /* Albastru și albastru închis */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textGlow 1.5s ease-in-out infinite;
         }
 
         @keyframes textGlow {
-            0% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
-            50% { text-shadow: 0 0 15px rgba(255, 99, 71, 1); }
-            100% { text-shadow: 0 0 5px rgba(255, 99, 71, 0.5); }
+            0% { text-shadow: 0 0 5px rgba(30, 144, 255, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(30, 144, 255, 1); }
+            100% { text-shadow: 0 0 5px rgba(30, 144, 255, 0.5); }
         }
 
         /* Container profil */
@@ -79,9 +79,9 @@
             max-width: 900px;
             margin: 50px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8); /* Black */
+            background-color: rgba(0, 0, 0, 0.8); /* Fundal semi-transparent pentru container */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.7); /* red shadow */
+            box-shadow: 0 4px 8px rgba(30, 144, 255, 0.7); /* Albastru luminos shadow */
             position: relative;
             display: flex;
             flex-direction: column;
@@ -94,7 +94,7 @@
             background: url('https://xatimg.com/image/aGBLR1MOWcPH.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
-            border-bottom: 5px solid #FF6347; /* Red */
+            border-bottom: 5px solid #1E90FF; /* Albastru luminos */
         }
 
         .avatar-container {
@@ -106,8 +106,8 @@
             height: 150px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid #000000; /* Black */
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* red shadow */
+            border: 5px solid #000000; /* Border negru */
+            box-shadow: 0 0 15px rgba(30, 144, 255, 0.7); /* Glow albastru */
         }
 
         .avatar {
@@ -122,13 +122,13 @@
         }
 
         .profile-details h1 {
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
         }
 
         .profile-details p {
             margin: 10px 0;
             font-size: 1.1rem;
-            color: #D3D3D3; /* Light Gray */
+            color: #D3D3D3; /* Gri deschis */
             font-style: italic;
         }
 
@@ -142,7 +142,7 @@
             margin: 5px;
             text-decoration: none;
             color: #fff;
-            background-color: #FF6347; /* Red */
+            background-color: #1E90FF; /* Albastru luminos */
             border-radius: 5px;
             font-size: 1rem;
             font-weight: bold;
@@ -150,7 +150,7 @@
         }
 
         .profile-buttons a:hover {
-            background-color: #8B0000; /* Dark Red */
+            background-color: #00008B; /* Albastru închis */
             transform: scale(1.05);
         }
 
@@ -164,12 +164,12 @@
         }
 
         .info-card {
-            background-color: rgba(0, 0, 0, 0.9); /* Black */
-            border: 1px solid #8B0000; /* Dark Red */
+            background-color: rgba(0, 0, 0, 0.9); /* Negru semi-transparent */
+            border: 1px solid #00008B; /* Albastru închis */
             border-radius: 8px;
             padding: 20px;
             flex: 1 1 30%;
-            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.7); /* red shadow */
+            box-shadow: 0 4px 8px rgba(30, 144, 255, 0.7); /* Glow albastru */
             transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 20px;
             min-width: 280px;
@@ -177,24 +177,24 @@
 
         .info-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 6px 12px rgba(255, 0, 0, 1); /* intense red shadow */
+            box-shadow: 0 6px 12px rgba(30, 144, 255, 1); /* Glow intensificat */
         }
 
         .info-card h3 {
             margin-top: 0;
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
             font-size: 1.5rem;
         }
 
         .info-card p {
             margin: 10px 0;
-            color: #D3D3D3; /* Light Gray */
+            color: #D3D3D3; /* Gri deschis */
         }
 
         .footer-text {
             text-align: center;
             margin-top: auto;
-            color: #FF6347; /* Red */
+            color: #1E90FF; /* Albastru luminos */
             font-size: 1rem;
             font-weight: bold;
         }
@@ -219,24 +219,26 @@
                 <a href="indexgifs.html" target="_blank">Gif</a>
                 <a href="indexpcback.html" target="_blank">PcBack</a>
                 <a href="indexpstyle.html" target="_blank">PstyleGif</a>
-                 
             </div>
         </div>
         <div class="info-cards">
-    <div class="info-card">
-        <h3>Despre mine</h3>
-        <p>Ma numesc Dedo, am 31 de ani și sunt grafic designer. Îmi place muzica și mă specializez în crearea de GIF-uri avatar, PcBack și PstyleGif pe xat.com.</p>
+            <div class="info-card">
+                <h3>Despre mine</h3>
+                <p>Ma numesc Dedo, am 31 de ani și sunt grafic designer. Îmi place muzica și mă specializez în crearea de GIF-uri avatar, PcBack și PstyleGif pe xat.com.</p>
+            </div>
+            <div class="info-card">
+                <h3>Roluri curente</h3>
+                <p>Sunt activ pe xat.com, oferindu-mi expertiza în design grafic. Sunt pasionat de personalizarea profilurilor utilizatorilor.</p>
+            </div>
+            <div class="info-card">
+                <h3>Contact</h3>
+                <p>Pentru orice colaborări, mă poți contacta în chat privat la ID-ul: Dedo (1557730119).</p>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>&copy; 2024 Dedo. Toate drepturile rezervate.</p>
+        </div>
     </div>
-    <div class="info-card">
-        <h3>Roluri curente</h3>
-        <p>Sunt activ pe xat.com, oferindu-mi expertiza în design grafic. Sunt pasionat de personalizarea profilurilor utilizatorilor.</p>
-    </div>
-    <div class="info-card">
-        <h3>Contact</h3>
-        <p>Pentru orice colaborări, mă poți contacta în chat privat la ID-ul: Dedo (1557730119).</p>
-    </div>
-</div>
-<div class="footer-text">
-    <p>&copy; 2024 Dedo. Toate drepturile rezervate.</p>
-</div>
+</body>
+</html>
 
